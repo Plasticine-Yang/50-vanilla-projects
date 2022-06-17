@@ -1,0 +1,91 @@
+:root {
+  --line-empty-color: #f7f5f2;
+  --line-fill-color: #8d8daa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dfdfde;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 100%;
+  width: 360px;
+  margin-bottom: 30px;
+}
+
+/* 进度条的线条 */
+.progress-container::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--line-empty-color);
+  z-index: -1;
+  transform: translateY(-50%);
+}
+
+/* 进度条主体 */
+.progress {
+  position: absolute;
+  inset: 50% auto auto 0;
+  width: 0;
+  height: 4px;
+  transform: translateY(-50%);
+  background-color: var(--line-fill-color);
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+/* 进度条项中的圆圈 */
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 3px solid var(--line-empty-color);
+  color: #999;
+  transition: border-color 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--line-fill-color);
+}
+
+.btn {
+  background-color: var(--line-fill-color);
+  color: #f6c6ea;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 30px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  background-color: var(--line-empty-color);
+  cursor: not-allowed;
+}
