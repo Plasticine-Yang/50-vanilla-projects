@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  inset: -30px auto auto -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+  z-index: -1;
+  /* background 中写 center/cover 等价于 background-size */
+  /* background-size: cover; */
+  background: url("https://unsplash.com/photos/QMwkGYFDjiE/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjU2NTExNTgw&force=true")
+    no-repeat center center/cover;
+  filter: blur(30px);
+}
+
+.loading-text {
+  font-size: 128px;
+  color: #fff;
+}
