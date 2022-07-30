@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  border: 3px solid white;
+  padding: 20px 60px;
+  transition: background-color 1s ease;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 50%;
+  color: white;
+  transition: width 1s ease;
+  background: url("img/vue.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  width: 50%;
+  color: white;
+  transition: width 1s ease;
+  background-image: url("img/react.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.left a:hover {
+  background-color: #42b883;
+}
+
+.right a:hover {
+  background-color: #61dafb;
+}
+
+.container.hover-left .left,
+.container.hover-right .right {
+  width: 150%;
+}
