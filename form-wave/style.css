@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Fira+Mono:wght@400;500;700&display=swap");
+
+:root {
+  --primay-color: #4c3575;
+  --form-bg-color: #371b58;
+  --form-text-color: #ca82ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: var(--primay-color);
+  font-family: "Fira Mono", monospace;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--form-text-color);
+  padding: 30px;
+  background-color: var(--form-bg-color);
+  border-radius: 12px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form .form-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.login-form .form-item input {
+  display: block;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  padding: 15px 0;
+  font-size: 24px;
+}
+
+.login-form .form-item input:focus {
+  outline: none;
+}
+
+.login-form .form-item label {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.login-form .form-item label span {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.login-form .form-item input:focus + label span {
+  color: var(--form-text-color);
+  transform: translateY(-30px);
+}
+
+.login-form button {
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--form-text-color);
+  transition: transform 0.5s ease;
+}
+
+.login-form button:active {
+  transform: scale(0.95);
+}
+
+.login-form a {
+  text-decoration: none;
+  color: #a760ff;
+}
