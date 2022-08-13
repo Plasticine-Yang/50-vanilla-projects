@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #222;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card {
+  width: 350px;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px 10px rgba(255, 255, 255, 0.2);
+}
+
+.card header {
+  height: 200px;
+}
+
+.card main {
+  padding: 30px;
+}
+
+.card main h3 {
+  margin: 0;
+}
+
+.card main p {
+  color: gray;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author .author-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.author .author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100px;
+}
+
+.author .author-info small {
+  color: gray;
+}
+
+.skeleton {
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 10%,
+    #f6f7f8 20%,
+    #f6f7f8 100%
+  );
+  background-size: 200% 100%;
+  animation: flow 1s linear infinite;
+}
+
+@keyframes flow {
+  0% {
+    background-position: 50% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}
