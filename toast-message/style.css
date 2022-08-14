@@ -1,0 +1,110 @@
+:root {
+  --info-bg-color: #202121;
+  --info-text-color: #82858a;
+  --success-bg-color: #1c2518;
+  --success-text-color: #67c23a;
+  --warn-bg-color: #292218;
+  --warn-text-color: #e6a23c;
+  --error-bg-color: #2b1d1d;
+  --error-text-color: #f56c6c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: #141414;
+}
+
+.btn {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #4c4d4f;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: border-color 0.5s ease;
+}
+.btn:hover.info {
+  border-color: var(--info-text-color);
+}
+.btn:hover.success {
+  border-color: var(--success-text-color);
+}
+.btn:hover.warn {
+  border-color: var(--warn-text-color);
+}
+.btn:hover.error {
+  border-color: var(--error-text-color);
+}
+
+#message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 30px;
+  max-height: 100vh;
+  transition: max-height 3s ease;
+}
+
+.message {
+  width: fit-content;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 5px;
+  animation: fade-in-out 3s;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+}
+
+.message.info {
+  color: var(--info-text-color);
+  background-color: var(--info-bg-color);
+}
+
+.message.success {
+  color: var(--success-text-color);
+  background-color: var(--success-bg-color);
+}
+
+.message.warn {
+  color: var(--warn-text-color);
+  background-color: var(--warn-bg-color);
+}
+
+.message.error {
+  color: var(--error-text-color);
+  background-color: var(--error-bg-color);
+}
