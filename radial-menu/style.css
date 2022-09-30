@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #06283d;
+  color: #dff6ff;
+}
+
+/* 菜单未展开时 */
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.menu-container .toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  font-size: 2em;
+  border: 2px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #06283d;
+  transition: transform 0.5s;
+}
+
+.menu-container li {
+  position: absolute;
+  list-style: none;
+  transition: transform 0.5s;
+  transition-delay: calc(0.1s * var(--idx));
+}
+
+.menu-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  border: 2px solid var(--neon-color);
+  border-radius: 50%;
+  color: var(--neon-color);
+  transition: 1.5s;
+}
+
+/* 让图标反向旋转相同角度回正 */
+.menu-container li a {
+  transform: rotate(calc(360deg / -8 * var(--idx)));
+}
+
+/* 菜单展开时 */
+
+.menu-container.expanded .toggler {
+  transform: rotate(315deg);
+}
+
+.menu-container.expanded li {
+  transform: rotate(calc(360deg / 8 * var(--idx))) translateX(120px);
+}
+
+.menu-container.expanded li a:hover {
+  color: #06283d;
+  background-color: var(--neon-color);
+  box-shadow: 0 0 30px var(--neon-color), 0 0 50px var(--neon-color),
+    0 0 100px var(--neon-color);
+  transition: 0s;
+}
